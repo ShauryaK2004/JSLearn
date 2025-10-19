@@ -1,26 +1,20 @@
 ﻿# JSLearn Theorey
 
 ~> What is EcmaScript ?
-:-EcmaScript is a Standard which defines the syntax,
-rules and other things for a scripting language. Latest version being used is
-ES2025
+:-
+EcmaScript is a Standard which defines the syntax,rules and other things for a scripting language. Latest version being used is ES2025
 
-:-Javascript is a scripting language that is based on the standards of ecmascript
-javascript is the most common scripting language that extends the EcmaScript with functionality
-such as DOM.
+~>What is JavaScript?
+:-
+Javascript is a scripting language that is based on the standards of ecmascript javascript is the most common scripting language that extends the EcmaScript with functionality such as DOM.
 
 
 ~> How to execute Java Script ?
 :-
-{1.Javascript can be executed right inside one's browser. 
-  You can open the javascript console and start writing javascript there
-
-2.Another way to execute javascript is a runtime like Node.js 
-  which can be installed and used to run javascript code.
-
-3.Yet another way to execute javascript is by inserting "it inside 
-  <script> tag of an HTML document.
-    }
+ 1.Javascript can be executed right inside one's browser. You can open the javascript console and start writing javascript there
+2.Another way to execute javascript is a runtime like Node.js which can be installed and used to run javascript code.
+3.Yet another way to execute javascript is by inserting "it inside <script> tag of an HTML document.
+    
 ~> first program
   // we use console.log() function for printing output in console
   console.log("Hello World");
@@ -286,4 +280,5 @@ the <script> </script> tag can be used to insert internal or external script in 
 the benefit of a seprate js file is that the browser will download it and store it in its chache
 
 # JSLearn
+
 
