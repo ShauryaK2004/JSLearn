@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #Container1 {
+            display: grid;
+            grid-template-columns: 100px 100px;
+            gap: 5px;
+            flex-direction: column;
+        }
+
+        .box {
+            display: flex;
+            width: 100px;
+            height: 100px;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Container1">
+        <div class="box" id="red">red</div>
+        <div class="box" id="green">green</div>
+        <div class="box" id="blue">blue</div>
+        <div class="box" id="orange">orange</div>
+    </div>
+
+    <!-- Now using selectors -->
+    <script>
+        if (document.body.hasChildNodes()) {
+
+            firstChild = document.body.firstChild
+            firstElementChild = document.body.firstElementChild
+            alert(firstChild)
+            alert(firstElementChild)
+            firstElementChild.style.backgroundColor = "red"
+            console.log(firstElementChild.childNodes);
+            console.log(firstElementChild.children);
+            // Execute this code too here is when the real difference of html collection and array is known    
+            // firstElementChild.children = firstElementChild.children.forEach(element => {
+            //     element.style.color = 'white'
+            // });
+            Array.from(firstElementChild.children).forEach(element => {
+                element.style.color = 'white';
+            });
+        }
+    </script>
+</body>
+
+</html>
