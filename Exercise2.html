@@ -6,21 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
         .cont {
-            /* background-color: black; */
+            width: 100vw;
+            height: 100vh;
             display: flex;
-            width: 80vw;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .videoDataAndThumbnailComponent {
-            /* color: white; */
+            border-radius: 10px;
+            color: white;
+            background-color: black;
             border: 1px solid black;
-
+            font-size: smaller;
             display: flex;
             align-items: center;
-            width: 60%;
-            height: 150px
+            width: 600px;
+            height: 120px;
         }
 
         .imgOfCont {
@@ -60,51 +70,73 @@
             border: 1px solid black;
             height: 70%;
             width: 70%;
-            justify-content: center;
+            align-items: center;
         }
 
         .infoInCont {
+            width: 98%;
             display: flex;
+            font-size: smaller;
+            color: rgba(255, 255, 255, 0.831);
+            gap: 20px;
+            align-items: center;
         }
 
         .titleOfContent {
+            height: 30%;
+            display: flex;
+            font-weight: bolder;
+            padding: 2px;
             border: 1px solid black;
-            width: 100%;
-            height: 20px;
-            white-space: nowrap;
+            width: 98%;
             overflow: hidden;
-            text-overflow: ellipsis;
         }
     </style>
 </head>
 
 <body>
     <div class="cont">
-        <div class="videoDataAndThumbnailComponent">
-            <div class="imgOfCont">
-                <img class="imgInCont"
-                    src="https://i.ytimg.com/vi/CO_DAXswOrc/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAbDeaG5nlgOfmj0aGOejvuL6680Q"
-                    alt="">
-                <div class="timeOfCont">31:20</div>
-            </div>
-            <div class="contOfCont">
-                <div class="titleOfContent">
-                    headingfldkjfldkfjldjfldkfjdslkfjdflsjfdslkfjdslkfjdslfksdflkjdsfkdsjflkjflhjfdslkfsdlkfjdslfjdslfkjdsflkjdsflkdsjflksdjf
-                </div>
-                <div class="infoInCont">
-                    <div>channel name</div>
-                    <div>viewes</div>
-                    <div>time old</div>
-                </div>
-            </div>
-        </div>
     </div>
     <script>
-        // let makeTheComponent = (title, channelname, views, monthsold, duration) => {
-        //     letMainDiv = document.createElement("div");
-        //     letMainDiv.style.display="flex";
-
-        // }
+        let makeTheComponent = (title, thumbnail, channelname, views, monthsold, duration) => {
+            let MainDiv = document.createElement("div");
+            MainDiv.style.display = "flex";
+            MainDiv.className = "videoDataAndThumbnailComponent"
+            let ContainerImage = document.createElement("div");
+            let image = document.createElement("img")
+            let time = document.createElement("div")
+            ContainerImage.className = "imgOfCont";
+            image.className = "imgInCont";
+            image.src = thumbnail
+            time.className = "timeOfCont";
+            time.textContent = duration;
+            ContainerImage.append(image);
+            ContainerImage.append(time);
+            MainDiv.append(ContainerImage);
+            let contentContainer = document.createElement("div")
+            contentContainer.className = "contOfCont";
+            let titleOfContent = document.createElement("div");
+            titleOfContent.className = "titleOfContent";
+            titleOfContent.textContent = title;
+            contentContainer.append(titleOfContent);
+            let infoInCont = document.createElement("div")
+            infoInCont.className = "infoInCont"
+            let channelName = document.createElement("div")
+            channelName.textContent = channelname;
+            let viu = document.createElement("div")
+            viu.textContent = views
+            let timeOld = document.createElement("div")
+            timeOld.textContent = monthsold
+            infoInCont.append(channelName)
+            infoInCont.append(viu)
+            infoInCont.append(timeOld)
+            contentContainer.append(infoInCont)
+            MainDiv.append(contentContainer)
+            document.getElementsByClassName("cont")[0].append(MainDiv)
+        }
+        makeTheComponent("My video",
+            "https://i.ytimg.com/vi/CO_DAXswOrc/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAbDeaG5nlgOfmj0aGOejvuL6680Q",
+            "Code With Harry", "100k", "3 Months", "21:2")
     </script>
 </body>
 
