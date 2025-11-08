@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            border: 1px solid black;
+            padding: 50px;
+        }
+
+        #childContainer {
+            border: 1px solid black;
+            padding: 50px;
+        }
+
+        #child {
+            border: 1px solid black;
+            padding: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="childContainer">
+            <div id="child">
+                i am child
+            </div>
+        </div>
+    </div>
+    <script>
+        //Event bubbling is a term where when a child conrtainer is clicked and the same listners are included in the parent elements then 
+        // what happens is the event passes to its parent elements because technially they all are are triggered because the itself contain the child
+        // to stop it we use the e.stopPropagation() funciton that stops the transfer of the events to the paretent divs
+
+        document.getElementById("container").addEventListener("click", (e) => {
+            e.stopPropagation();
+            alert("main container was clicked");
+        });
+        document.getElementById("childContainer").addEventListener("click", () => {
+            alert(" child container was clicked");
+        });
+        document.getElementById("child").addEventListener("click", () => {
+            alert(" child was clicked");
+        });
+
+        //now we will learn set timeout and setinterval
+        setInterval(() => {
+            document.getElementById("container").style.backgroundColor =
+                `rgb(${Math.floor(Math.random()*125)},${Math.floor(Math.random()*125)},${Math.floor(Math.random()*125)})`
+
+            document.getElementById("childContainer").style.backgroundColor =
+                `rgb(${Math.floor(Math.random()*125)},${Math.floor(Math.random()*125)},${Math.floor(Math.random()*125)})`
+
+            document.getElementById("child").style.backgroundColor =
+                `rgb(${Math.floor(Math.random()*125)},${Math.floor(Math.random()*125)},${Math.floor(Math.random()*125)})`
+
+        }, 1000);
+
+
+        //set timeout funciton performs actions after some given delay this helps the program to fetch api or etc 
+        //this may help the program the run in async 
+        setTimeout(() => {
+            console.log("hii");
+        }, 3000)
+    </script>
+</body>
+
+</html>
