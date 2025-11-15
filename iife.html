@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        async function sleepMe() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(100);
+                }, 1000);
+            })
+        }
+        // this cannot be done as async functions can only be called inside another async functions
+        // let a=await sleepMe()
+        //but it is not possible to always make a seprate async function so we use a iife
+        (async () => {
+            let a = await sleepMe();
+            console.log(a);
+        })()
+    </script>
+</body>
+
+</html>

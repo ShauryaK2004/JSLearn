@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Lets us learn about the opps here what we will do is we will try to learn about the concept of object oriented programming 
+        let obj = {
+            a: 3,
+            name: "Shaurya"
+        }
+        //this is the most basic example of object in js 
+        //every object has a prebuilt functionality that is known as prototype 
+        //this helps us in using the inheritence let us see how
+
+        let bike = {
+            has: "Engine"
+        }
+        let royalEnfield = {
+            color: "BLACK"
+        }
+
+        royalEnfield.__proto__ = bike
+        console.log(royalEnfield.has)
+
+        //But this is not the correct way to learn opps let us see concept of classes
+        class animal {
+            constructor(name) {
+                this.name = name;
+            }
+            run() {
+                console.log("i can run")
+            }
+            drink() {
+                conosle.log("i can drink")
+            }
+        }
+        class lion extends animal {
+            constructor(name) {
+                super(name);
+                console.log("I was given birth today");
+                this.eat = 0;
+            }
+            isHungry() {
+                if (this.eat < 5) console.log("I am hungry")
+                else return false;
+                return true;
+            }
+            eatFood() {
+                this.eat += 1;
+            }
+        }
+        let cub = new lion("Sheera")
+        if (cub.isHungry()) {
+            cub.eatFood();
+        }
+    </script>
+</body>
+
+</html>

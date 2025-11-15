@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let [a, b, ...rest] = [1, 2, 3, 3, 3, 5]
+        console.log(a, b, rest)
+        let obj = {
+            a: 4,
+            b: 6,
+            c: 10
+        }
+        let {
+            a: num1
+        } = obj;
+        console.log(num1)
+
+        let obj2 = {
+            ...[1, 2, 4]
+        }
+        console.log(obj2)
+
+        // also ... is called a spread operator that helps us to pass variable from a single array eg sum(...array) where sum=(a,b,c)=>{}
+    </script>
+</body>
+
+</html>
