@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 3. The Mirror Mirror:
+        // Imagine you have a string, and you need to create a new string that is a mirror image
+        // of the original. Write a function that appends the reversed version of the original 
+        // string to itself.
+        function rev(str, i) {
+            if (i == str.length) return ""
+            return rev(str, i + 1) + str[i];
+        }
+        let str = "Shaurya"
+        str += rev(str, 0)
+        console.log(str)
+    </script>
+</body>
+
+</html>

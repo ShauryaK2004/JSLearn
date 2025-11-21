@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <div class="box">Box</div>
+        <div class="box" id="box2">Box</div>
+        <div class="box">Box</div>
+        <div class="box">Box</div>
+    </div>
+    <script>
+        // let box = document.getElementsByClassName("box");
+        // console.log(box)
+        // box[2].style.backgroundColor = "red"
+
+        // Lets us do this by using the id selectors
+
+        // let box2 = document.getElementById("box2");
+        // box2.style.backgroundColor = "red";
+
+        // Let us do this by using the queryselectors
+        // querySelector works on css selectors
+        // document.querySelector("#box2").style.backgroundColor = "red";
+
+        // querySelectorAll works on css selectors and returns each element that has this property
+        // Array.from(document.querySelectorAll(".box")).forEach(node => node.style.backgroundColor = "red")
+
+        // getElementByTagName("string") is used to select each of the elements that is passed in the paremeter 
+        // Array.from(document.getElementsByTagName("div")).forEach(node => node.style.backgroundColor = "red")
+    </script>
+</body>
+
+</html>

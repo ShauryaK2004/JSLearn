@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart Totalizer</title>
+</head>
+
+<body>
+    <script>
+        let calculateTotal = (items) => {
+            // This is the correct logic: multiply price by quantity and set an initial accumulator value of 0.
+            return items.reduce((ac, curr) => ac + (curr["price"] * curr["quantity"]), 0);
+        }
+
+        let arr = [{
+                "id": 1,
+                "name": "Wireless Ergonomic Mouse",
+                "description": "A comfortable mouse for all-day use.",
+                "price": 29.99,
+                "quantity": 1,
+                "category": "Electronics"
+            },
+            {
+                "id": 2,
+                "name": "Mechanical Keyboard",
+                "description": "RGB backlit keyboard with tactile switches.",
+                "price": 85.50,
+                "quantity": 1,
+                "category": "Electronics"
+            },
+            {
+                "id": 3,
+                "name": "4K Ultra HD Monitor",
+                "description": "27-inch display with vibrant colors.",
+                "price": 349.00,
+                "quantity": 2,
+                "category": "Electronics"
+            },
+            {
+                "id": 4,
+                "name": "Reusable Coffee Mug",
+                "description": "Eco-friendly travel mug.",
+                "price": 12.00,
+                "quantity": 4,
+                "category": "Accessories"
+            },
+            {
+                "id": 5,
+                "name": "Noise-Cancelling Headphones",
+                "description": "Premium sound quality and comfort.",
+                "price": 199.99,
+                "quantity": 1,
+                "category": "Electronics"
+            }
+        ];
+
+        console.log(calculateTotal(arr)); // The correct output is 982.48
+    </script>
+</body>
+
+</html>

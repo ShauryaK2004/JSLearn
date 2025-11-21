@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 8. Async Array Mapping:
+        // Write an asynchronous function that takes an array of numbers and returns a new array of Promises
+        // where each number is multiplied by 2 after a delay of 500 milliseconds.
+        let arr = [12, 3, 4, 5, 6, 67, 7]
+
+        let funcPro = (arr) => {
+                return arr.map((e) => new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve(e * 2)
+                    }, 500)
+                }))
+            }
+            (async () => {
+
+                let arr2 = funcPro(arr)
+                arr2 = await Promise.all(arr2)
+                console.log(arr2)
+            })()
+    </script>
+</body>
+
+</html>

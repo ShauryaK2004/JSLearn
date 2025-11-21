@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 12. The Token Manager:
+        // You are developing a user authentication system, and you need to manage user authentication tokens. Implement a
+        //  function named setAuthToken that takes an authentication token and sets it in localStorage with an expiration time.
+        let setAuthToken = (value, TimeInMinutes) => {
+            let key = crypto.randomUUID();
+            let token = {
+                data: value,
+                expiry: Date.now() + TimeInMinutes * 60000
+            }
+            localStorage.setItem(key, JSON.stringify(token))
+
+        }
+        setAuthToken("Shaurya", 1)
+    </script>
+</body>
+
+</html>

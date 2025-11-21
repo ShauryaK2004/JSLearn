@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="Container"></div>
+    <script>
+        let note = prompt("Enter new note: ");
+        let arr = localStorage.getItem("Notes");
+        arr = JSON.parse(arr);
+        if (!arr) arr = [];
+        arr.push(note);
+        localStorage.setItem("Notes", JSON.stringify(arr));
+        arr.forEach(element => {
+            let div = document.createElement("div")
+            div.innerText = element
+            document.getElementById("Container").append(div)
+        });
+    </script>
+</body>
+
+</html>

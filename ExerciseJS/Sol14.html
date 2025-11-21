@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Scroller</title>
+    <style>
+        body {
+            /* Add significant height to the body to enable scrolling */
+            height: 200vh;
+            margin: 0;
+            padding: 20px;
+            font-family: sans-serif;
+        }
+
+        .scroll-button {
+            position: fixed;
+            /* Keep the button visible as you scroll */
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Scroll down to see the button</h1>
+    <p>... lots of content here ...</p>
+
+    <!-- The button to call the function -->
+    <button class="scroll-button" onclick="smoothScrollToTop()">
+        Go to Top
+    </button>
+
+    <script>
+        // 14. The Window Scroller:
+        // Implements a function named smoothScrollToTop that smoothly scrolls the window to the top.
+
+        /**
+         * Smoothly scrolls the current window to the top (0, 0) position.
+         */
+        function smoothScrollToTop() {
+            window.scrollTo({
+                top: 0, // Target vertical position
+                left: 0, // Target horizontal position (usually 0)
+                behavior: 'smooth' // Specifies smooth scrolling
+            });
+        }
+    </script>
+
+</body>
+
+</html>

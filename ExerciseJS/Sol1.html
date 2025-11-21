@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. The Magical Sorting Hat:
+        //Imagine you are creating a magical sorting hat for a wizard school. Implement a JavaScript function that takes an array of student names and assigns them to one of the four houses 
+        // (Gryffindor (length less than 6), Hufflepuff(length less than 8), Ravenclaw(length less than 12), 
+        // or Slytherin(length greater than or equal to 12)) based on the length of their names.
+
+        let arr = ["Shaurya", "anuj", "nitish", "shivam", "ashutosh"]
+        let house = arr.map((e) => e.length)
+        house = house.map((e) => {
+            if (e < 6) return "Gryffindor"
+            else if (e < 8) return "Hufflepuf"
+            else if (e < 12) return "Ravenclaw"
+            else return "Slytherin"
+        })
+        console.log(arr)
+        console.log(house)
+    </script>
+</body>
+
+</html>

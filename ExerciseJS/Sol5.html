@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 5. The Sum Selector:
+        // You are working on a function that should sum all numbers in an array until it encounters a negative number. 
+        // Write a function that performs this summation.
+        var sum = 0;
+        let arr = [1, 2, 3, 3, -1, 22];
+        arr.some((e) => {
+            if (e < 0) return true;
+            sum += e;
+        })
+        console.log(sum)
+    </script>
+</body>
+
+</html>

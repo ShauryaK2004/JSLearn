@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .Redcol {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">Hey I am a box</div>
+        <div class="hide">Hide me</div>
+    </div>
+
+    <script>
+        // Returns the HTML written inside the element
+        console.log(document.querySelector(".container").innerHTML);
+
+        // Returns the HTML with the element and content inside it
+        console.log(document.querySelector(".container").outerHTML);
+
+        // Used to return the name of the element (can be used only for elements)
+        console.log(document.querySelector(".box").tagName);
+
+        // Used to return the name of the content
+        console.log(document.querySelector(".box").nodeName);
+
+        // Returns only the text, removing the tag names
+        console.log(document.querySelector(".box").textContent);
+
+        // Hidden is used to hide an element
+        document.querySelector(".hide").hidden = true;
+
+        // hasAttribute() checks if an element has that particular attribute 
+        console.log(document.querySelector(".box").hasAttribute("style"));
+
+        // setAttribute() sets the value of the attribute
+        document.querySelector(".box").setAttribute("style", "color:blue");
+
+        // getAttribute() gets the value of an attribute of the element
+        console.log(document.querySelector(".box").getAttribute("style"));
+
+        // removeAttribute() deletes the particular attribute from the element
+        document.querySelector(".box").removeAttribute("style");
+
+        // attributes lists all the attributes in the element
+        console.log(document.querySelector(".box").attributes);
+
+        // document.designMode = "on" makes a website editable temporarily (until reload)
+
+
+        // .createElement() is used to create an element 
+        let div = document.createElement("div");
+        div.className = "newOne";
+        div.innerHTML = "<h1>I am New Element</h1>";
+        document.querySelector(".container").append(div);
+
+        // element.prepend(element) -> insert element at beginning of the element in which it is inserted
+        // element.before(element) -> insert element before the selected element
+        // element.after(element) -> insert element after the selected element
+        // element.replaceWith(element) -> replaces element with the passed one
+
+
+        // .insertAdjacentHTML/Text is used to insert HTML or text into an element
+        // It has two attributes:
+        //   1. position (where to insert)
+        //   2. the actual HTML or text
+        // Positions:
+        //   beforeBegin -> before the element
+        //   afterEnd -> after the element
+        //   afterBegin -> after the start of the element
+        //   beforeEnd -> before the end of the element
+        let cont = document.querySelector(".container");
+        cont.insertAdjacentHTML("beforebegin", "<div>I was inserted</div>");
+
+        // Node removal
+        let ele = document.querySelector(".box");
+        ele.remove();
+
+        // ClassList and ClassName
+        let container = document.querySelector(".container");
+        console.log("All the class in the container are: " + container.className);
+        console.log("Classes in form of an array: \n" + container.classList);
+
+        container.classList.add("Redcol");
+
+        if (container.classList.contains("Redcol")) {
+            container.classList.remove("Redcol");
+        }
+
+        container.classList.toggle("Redcol");
+        container.classList.remove("Redcol");
+    </script>
+</body>
+
+</html>

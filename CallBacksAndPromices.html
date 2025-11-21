@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // what are callbacks
+        // callbacks are basically function that are passed onto other function 
+        // you may have used callbacks in for each loops
+        // eg- arr.forEach(()=>{})
+        // here in a function forEach is used to usme the ary data automatically
+        // we will learn about how are callbacks are actually used , so callbacks are used to pass function to another function
+        // let us learn what is a callback hell
+        // call back hell happen's when we call multiple callbacks and is makes it difficult to handel and understand
+        // making a call back hell and also resolving it by using better ways of it
+
+        // How to use callbacks and learn what is callback hell
+        // let getData = (DataId, getNextData) => {
+        //     console.log("Some Data :" + DataId);
+        //     if (getNextData) getNextData();
+        // }
+
+        // console.log("Getting data one: ");
+        // getData(1, () => {
+        //     console.log("Getting data 2");
+        //     getData(2, () => {
+        //         console.log("Getting data 3")
+        //         getData(3);
+        //     })
+        // })
+        // Now this is a complex procedure to follow and it is called as callback hell
+
+        //this same thing can be done by promices that is a better way to remove callbacks
+
+        // lets us learn about what are promices and its syntax
+
+        // function getData(dataId)
+        // {
+        //   return new Promise((resolve,reject)=>
+        //   {
+        //     setTimeout(()=>
+        //     {
+        //       console.log("Some data ",dataId)
+        //       resolve("Success");
+        //     },5000)
+        //   })
+        // }
+
+        // console.log("Fetcing data 1.....");
+        // getData(1).then(()=>
+        // {
+        //   console.log("Fetching data 2....")
+        //   return getData(2);
+        // }).then(()=>
+        // {
+        //     console.log("Fetching data 3.....")
+        //     return getData(3);
+        // }).then((res)=>
+        // {
+        //     console.log(res);
+        // })
+
+        // function getData(dataId)
+        // {
+        //   return new Promise((resolve,reject)=>
+        //   {
+        //     setTimeout(()=>{
+        //     console.log("Some data ",dataId)
+        //     resolve("success")
+        //     },3000)
+        //   })
+        // }
+        // async function data()
+        // {
+        //   console.log("Getting data 1....");
+        //   await getData(1);
+        //   console.log("Getting data 2....");
+        //   await getData(2);
+        //   // getData(2).then((res)=>{console.log(res)})
+        // } data();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .cont {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .videoDataAndThumbnailComponent {
+            border-radius: 10px;
+            color: white;
+            background-color: black;
+            border: 1px solid black;
+            font-size: smaller;
+            display: flex;
+            align-items: center;
+            width: 600px;
+            height: 120px;
+        }
+
+        .imgOfCont {
+            width: 25%;
+            display: flex;
+            border-radius: 10px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        .imgInCont {
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+            object-fit: contain;
+        }
+
+        .timeOfCont {
+            position: absolute;
+            bottom: 10%;
+            right: 5%;
+            color: white;
+            border-radius: 5px;
+            padding: 3px;
+            font-size: small;
+            background-color: rgba(0, 0, 0, 0.721);
+            font-weight: bolder;
+
+        }
+
+        .contOfCont {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+            height: 70%;
+            width: 70%;
+            align-items: center;
+        }
+
+        .infoInCont {
+            width: 98%;
+            display: flex;
+            font-size: smaller;
+            color: rgba(255, 255, 255, 0.831);
+            gap: 20px;
+            align-items: center;
+        }
+
+        .titleOfContent {
+            height: 30%;
+            display: flex;
+            font-weight: bolder;
+            padding: 2px;
+            border: 1px solid black;
+            width: 98%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cont">
+    </div>
+    <script>
+        let makeTheComponent = (title, thumbnail, channelname, views, monthsold, duration) => {
+            let MainDiv = document.createElement("div");
+            MainDiv.style.display = "flex";
+            MainDiv.className = "videoDataAndThumbnailComponent"
+            let ContainerImage = document.createElement("div");
+            let image = document.createElement("img")
+            let time = document.createElement("div")
+            ContainerImage.className = "imgOfCont";
+            image.className = "imgInCont";
+            image.src = thumbnail
+            time.className = "timeOfCont";
+            time.textContent = duration;
+            ContainerImage.append(image);
+            ContainerImage.append(time);
+            MainDiv.append(ContainerImage);
+            let contentContainer = document.createElement("div")
+            contentContainer.className = "contOfCont";
+            let titleOfContent = document.createElement("div");
+            titleOfContent.className = "titleOfContent";
+            titleOfContent.textContent = title;
+            contentContainer.append(titleOfContent);
+            let infoInCont = document.createElement("div")
+            infoInCont.className = "infoInCont"
+            let channelName = document.createElement("div")
+            channelName.textContent = channelname;
+            let viu = document.createElement("div")
+            viu.textContent = views
+            let timeOld = document.createElement("div")
+            timeOld.textContent = monthsold
+            infoInCont.append(channelName)
+            infoInCont.append(viu)
+            infoInCont.append(timeOld)
+            contentContainer.append(infoInCont)
+            MainDiv.append(contentContainer)
+            document.getElementsByClassName("cont")[0].append(MainDiv)
+        }
+        makeTheComponent("My video",
+            "https://i.ytimg.com/vi/CO_DAXswOrc/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAbDeaG5nlgOfmj0aGOejvuL6680Q",
+            "Code With Harry", "100k", "3 Months", "21:2")
+    </script>
+</body>
+
+</html>
